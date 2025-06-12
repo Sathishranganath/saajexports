@@ -123,6 +123,80 @@
 .service-box.expanded .details {
   display: block;
 }
+#workflow {
+  padding: 60px 30px;
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #f1f5f9;
+  text-align: center;
+}
+
+#workflow h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #facc15;
+}
+
+.workflow-intro {
+  font-size: 16px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #cbd5e1;
+}
+
+.workflow-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.workflow-step {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid #3b82f6;
+  border-radius: 10px;
+  padding: 20px;
+  width: 260px;
+  min-height: 100px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+.workflow-step h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+.workflow-step .step-details {
+  font-size: 14px;
+  color: #e5e7eb;
+  display: none;
+  margin-top: 10px;
+}
+
+.workflow-step.active .step-details {
+  display: block;
+}
+
+.arrow {
+  font-size: 24px;
+  color: #facc15;
+}
+
+.workflow-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 15px;
+}
+
+.workflow-step:hover {
+  border-color: #facc15;
+}
   </style>
 </head>
 <body>
@@ -136,20 +210,20 @@
   <nav>
     <a href="#about">About</a>
     <a href="#services">What We Offer</a>
-    <a href="#process">How It Works</a>
+    <a href="#workflow">How It Works</a>
     <a href="#clients">Clients</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section id="about">
     <h2>About us.</h2>
-    <p>SAAJ Exports wasn’t born in a boardroom — it was born on the factory floor, in response to a real and growing gap in the footwear industry.
+    <p>SAAJ Exports wasn’t born in a boardroom — it was born on the factory floor, in response to a real and growing gap in the footwear industry.</p>
 
-As modern D2C brands surged with fresh ideas, most manufacturers remained stuck in outdated practices — rigid MOQs, zero product development guidance, and no room for collaboration. We saw brilliant founders with vision and ambition walk away disappointed from traditional factories that weren’t built to nurture new-age sneaker brands.
+<p>As modern D2C brands surged with fresh ideas, most manufacturers remained stuck in outdated practices — rigid MOQs, zero product development guidance, and no room for collaboration. We saw brilliant founders with vision and ambition walk away disappointed from traditional factories that weren’t built to nurture new-age sneaker brands.</p>
 
-That’s where SAAJ steps in — as a next-generation, D2C-aligned sneaker manufacturing partner. We don't just make shoes; we help brands launch, test, iterate, and scale. From first sample to full-scale production, our mission is to bring agility, craftsmanship, and startup empathy to the sneaker industry.
+<p>That’s where SAAJ steps in — as a next-generation, D2C-aligned sneaker manufacturing partner. We don't just make shoes; we help brands launch, test, iterate, and scale. From first sample to full-scale production, our mission is to bring agility, craftsmanship, and startup empathy to the sneaker industry.</p>
 
-We’re not just "factory-ready" — we’re founder-ready. Built in India. Powered by passion. Structured for scale.</p>
+<p>We’re not just "factory-ready" — we’re founder-ready. Built in India. Powered by passion. Structured for scale.</p>
     <img src="factory-line-1.jpg" alt="Workers assembling shoes in factory" />
   </section>
 
@@ -184,14 +258,44 @@ We’re not just "factory-ready" — we’re founder-ready. Built in India. Powe
   </div>
 </section>
 
-  <section id="process">
-    <h2>How It Works</h2>
-    <p>From sampling to final dispatch, we handle it all. Our streamlined process includes:</p>
-    <ol>
-      <li>📦 Material sourcing & die setup</li>
-      <li>🧵 Upper stitching & quality checks</li>
-      <li>👟 Full shoe lasting, sole attaching & finishing</li>
-      <li>📋 Final QA + packing & dispatch</li>
+<section id="workflow">
+  <h2>How It Works</h2>
+  <p class="workflow-intro">
+    From your first design to the final packed pair, our process is built for precision, speed, and brand success.
+  </p>
+  <div class="workflow-container">
+    <div class="workflow-step" onclick="toggleStep(this)">
+      <h4>Design & Material Confirmation</h4>
+      <p class="step-details">Collaborate to finalize designs, materials, and construction plans aligned with your brand vision.</p>
+    </div>
+    <div class="arrow">➜</div>
+    <div class="workflow-step" onclick="toggleStep(this)">
+      <h4>Material Sourcing</h4>
+      <p class="step-details">We procure materials from vetted suppliers to ensure quality and consistency.</p>
+    </div>
+    <div class="arrow">➜</div>
+    <div class="workflow-step" onclick="toggleStep(this)">
+      <h4>Die Setup</h4>
+      <p class="step-details">Customized cutting dies for uppers and soles are created for precise replication.</p>
+    </div>
+    <div class="arrow">➜</div>
+    <div class="workflow-step" onclick="toggleStep(this)">
+      <h4>Upper Stitching & QA</h4>
+      <p class="step-details">Experienced artisans stitch uppers, followed by thorough quality checks.</p>
+    </div>
+    <div class="arrow">➜</div>
+    <div class="workflow-step" onclick="toggleStep(this)">
+      <h4>Assembly & Finishing</h4>
+      <p class="step-details">Shoe lasting, sole fixing, finishing, and detailing all happen in-house.</p>
+    </div>
+    <div class="arrow">➜</div>
+    <div class="workflow-step" onclick="toggleStep(this)">
+      <h4>Final QA + Dispatch</h4>
+      <p class="step-details">Each pair undergoes final inspection, is packed securely, and shipped to your destination.</p>
+    </div>
+  </div>
+</section>
+
     </ol>
     <img src="factory-line-2.jpg" alt="Sneaker production line with lasts" />
   </section>
@@ -220,6 +324,9 @@ We’re not just "factory-ready" — we’re founder-ready. Built in India. Powe
     document.querySelectorAll('.service-box').forEach(el => el.classList.remove('expanded'));
     // Toggle the clicked one
     box.classList.toggle('expanded');
+  }
+   function toggleStep(element) {
+    element.classList.toggle('active');
   }
 </script>
 
