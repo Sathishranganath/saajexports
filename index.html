@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SAAJ Exports - B2B Footwear Manufacturing</title>
@@ -71,6 +72,11 @@
       border-radius: 8px;
     }
 
+#what-we-offer {
+  padding: 60px 20px;
+  text-align: center;
+}
+
 .services-container {
   display: flex;
   flex-wrap: wrap;
@@ -91,6 +97,7 @@
   transition: all 0.3s ease-in-out;
   overflow: hidden;
   position: relative;
+  color: #e2e8f0;
 }
 
 .service-box:hover {
@@ -122,6 +129,25 @@
 
 .service-box.expanded .details {
   display: block;
+}
+
+.service-box h4 {
+  margin-bottom: 10px;
+  color: #38bdf8;
+  font-size: 18px;
+}
+.service-box .service-details {
+  display: none;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #f8fafc;
+}
+.service-box.active .service-details {
+  display: block;
+}
+
+.service-box:hover {
+  border-color: #facc15;
 }
 #workflow {
   padding: 60px 30px;
@@ -197,6 +223,45 @@
 .workflow-step:hover {
   border-color: #facc15;
 }
+
+.social-follow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(15, 23, 42, 0.9);
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 1px solid #3b82f6;
+  color: #f8fafc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  z-index: 999;
+}
+
+.social-follow h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #38bdf8;
+}
+
+.social-follow ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-follow ul li a i {
+  margin-right: 8px;
+  color: #facc15;
+}
+
+.social-follow ul li a:hover i {
+  color: #ffffff;
+}
+
+.social-follow ul li a:hover {
+  color: #fff;
+}
+
   </style>
 </head>
 <body>
@@ -229,31 +294,53 @@
 
 <section id="services">
   <h2>What We Offer</h2>
-  <div class="services-container">
-    <div class="service-box" onclick="toggleDetails(this)">
-      <h3>B2B Manufacturing</h3>
-      <p class="description">Click to Learn More</p>
-      <div class="details">Dedicated contract manufacturing for upcoming footwear brands with startup support built-in.</div>
+ <div class="services-container">
+    <!-- B2B Contract Manufacturing -->
+    <div class="service-box" onclick="toggleServiceBox(this)">
+      <h4><i class="fas fa-handshake"></i> B2B Contract Manufacturing</h4>
+      <p class="service-details">
+        We partner with brands to provide end-to-end sneaker manufacturing solutions, from sampling to scale, with a strong focus on quality and timelines.
+      </p>
     </div>
-    <div class="service-box" onclick="toggleDetails(this)">
-      <h3>Sneaker Varieties</h3>
-      <p class="description">Click to Learn More</p>
-      <div class="details">We manufacture barefoot, casual, lifestyle, and performance sneakers with technical understanding.</div>
+
+    <!-- Sneaker Types -->
+    <div class="service-box" onclick="toggleServiceBox(this)">
+      <h4><i class="fas fa-shoe-prints"></i> Sneaker Types</h4>
+      <p class="service-details">
+        We specialize in barefoot, casual, lifestyle, and performance sneakers — crafted to match your design and comfort requirements.
+      </p>
     </div>
-    <div class="service-box" onclick="toggleDetails(this)">
-      <h3>Low MOQ</h3>
-      <p class="description">Click to Learn More</p>
-      <div class="details">We support low minimum order quantities starting from just 300–500 pairs to enable market testing.</div>
+
+    <!-- Flexible MOQs -->
+    <div class="service-box" onclick="toggleServiceBox(this)">
+      <h4><i class="fas fa-layer-group"></i> Flexible MOQs</h4>
+      <p class="service-details">
+        Start with as low as 300–500 pairs. Perfect for D2C brands wanting to test the market without large investments.
+      </p>
     </div>
-    <div class="service-box" onclick="toggleDetails(this)">
-      <h3>Full In-house Setup</h3>
-      <p class="description">Click to Learn More</p>
-      <div class="details">Cutting, stitching, and full-shoe assembly is done under one roof for full control and speed.</div>
+
+    <!-- In-house Production -->
+    <div class="service-box" onclick="toggleServiceBox(this)">
+      <h4><i class="fas fa-industry"></i> Full In-House Production</h4>
+      <p class="service-details">
+        All cutting, stitching, assembling, and finishing are done under one roof — ensuring tight quality control and faster production cycles.
+      </p>
     </div>
-    <div class="service-box" onclick="toggleDetails(this)">
-      <h3>Premium Services</h3>
-      <p class="description">Click to Learn More</p>
-      <div class="details">We offer branding help, premium packaging, serial number registration, and sample-to-launch consulting.</div>
+
+    <!-- Sampling & Packaging -->
+    <div class="service-box" onclick="toggleServiceBox(this)">
+      <h4><i class="fas fa-box-open"></i> Sampling & Packaging</h4>
+      <p class="service-details">
+        We offer rapid prototyping, premium box design, serialized product tracking, and personalized packaging experiences.
+      </p>
+    </div>
+
+    <!-- Private Labelling -->
+    <div class="service-box" onclick="toggleServiceBox(this)">
+      <h4><i class="fas fa-tags"></i> Private Labelling</h4>
+      <p class="service-details">
+        Launch confidently under your own brand. We provide branded insoles, boxes, tags, and product-level customization support.
+      </p>
     </div>
   </div>
 </section>
@@ -313,6 +400,14 @@
     <a href="mailto:saajleathers@gmail.com" class="btn">Contact Us</a>
   </section>
 
+<div class="social-follow">
+  <h4>Follow Us</h4>
+  <ul>
+    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+  </ul>
+</div>
   <footer>
     <p>&copy; 2025 SAAJ Exports. All Rights Reserved.</p>
   </footer>
@@ -325,8 +420,26 @@
     // Toggle the clicked one
     box.classList.toggle('expanded');
   }
-   function toggleStep(element) {
-    element.classList.toggle('active');
+  function toggleStep(clickedElement) {
+    // Close all steps first
+    const allSteps = document.querySelectorAll('.workflow-step');
+    allSteps.forEach(step => {
+      if (step !== clickedElement) {
+        step.classList.remove('active');
+      }
+    });
+
+    // Toggle the clicked one
+    clickedElement.classList.toggle('active');
+  }
+  function toggleServiceBox(clickedBox) {
+    const allBoxes = document.querySelectorAll('.service-box');
+    allBoxes.forEach(box => {
+      if (box !== clickedBox) {
+        box.classList.remove('active');
+      }
+    });
+    clickedBox.classList.toggle('active');
   }
 </script>
 
