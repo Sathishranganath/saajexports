@@ -137,13 +137,15 @@
   font-size: 18px;
 }
 .service-box .service-details {
-  display: none;
-  font-size: 14px;
-  margin-top: 10px;
-  color: #f8fafc;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
 }
+
 .service-box.active .service-details {
-  display: block;
+  max-height: 500px; /* Adjust if content grows larger */
+  opacity: 1;
 }
 
 .service-box:hover {
@@ -249,17 +251,25 @@
   margin: 0;
 }
 
+.social-follow ul li {
+  margin-bottom: 5px;
+}
+
+.social-follow ul li a {
+  color: #facc15;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
 .social-follow ul li a i {
   margin-right: 8px;
   color: #facc15;
 }
 
+.social-follow ul li a:hover,
 .social-follow ul li a:hover i {
   color: #ffffff;
-}
-
-.social-follow ul li a:hover {
-  color: #fff;
 }
 
   </style>
@@ -403,9 +413,11 @@
 <div class="social-follow">
   <h4>Follow Us</h4>
   <ul>
-    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+    <li><a href="https://www.facebook.com/profile.php?id=61577176476984" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
     <li><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
-    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+    <li><a href="https://www.instagram.com/saaj.2025/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+    <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+    <li><a href="#" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
   </ul>
 </div>
   <footer>
